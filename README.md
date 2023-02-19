@@ -1,27 +1,31 @@
 # Backend.TechChallenge
 
-El objetivo de esta prueba es refactorizar el código de este proyecto. 
-Se puede realizar cualquier cambio que considere necesario en el código (aplicar nuevas features relacionadas con el framework) y en los test.
+Un developer se fue y nos dejó ese proyecto así, con muchos problemas.
 
-## Que esperamos encontrar en el Challege:
+El webAPI funciona, pero tiene muchos fallos de arquitectura, calidad de codigo, testing y etc.
 
-Trate el refactoring como de um código final, que irá a producción y tiene que estar lo mejor posible.
-Por eso, en el resultado del refactoring nos gustaría encontrar:
+El es refactorizar el código de este proyecto.
 
-- Programación Orientada a Objetos
+Trate como un refactoring de um código final, que irá a producción y tiene que estar lo mejor posible.
 
-- Un modelo de arquitectura, el que tu consideres mas aplicable o que tengas más experiencia
+## Que esperamos encontrar en el Challenge:
 
-- Los conceptos de Clean Code que tu consideres importantes 
+En el resultado del refactoring nos gustaría encontrar:
 
-- Los mejores tests unitários que puedas hacer y con la mayor cobertura de código que consideres importante
+- Programación orientada a objetos.
 
-- Un sistema polimórfico o algun patrón de diseño, el que más encaje o te guste
+- Un modelo de arquitectura. El que tu consideres mas aplicable o que tengas más experiencia.
 
-- Conceptos transversales/crosscutting que consideres importantes a un sistema en producción (logging, validation, observability, caching, security, etc.)
+- Los conceptos de Clean Code que tu consideres importantes.
 
-- Conceptos de REST, principios SOLID y buenas practicas aplicados
+- Los mejores tests unitários que puedas hacer y con la cobertura de código que consideres importante.
 
-- Si decides cambiar el tipo de persistencia (actualmente archivo TXT), considere que tu nueva implementación deberá estar funcionando
+- Un sistema polimórfico o algun patrón de diseño. El que más encaje o que más te guste.
+
+- Conceptos transversales/crosscutting que consideres importantes a un webAPI en producción como logging, validation, exception handling... 
+
+- Conceptos de REST, principios SOLID y buenas practicas aplicados.
+
+- Y si decides cambiar el tipo de persistencia (actualmente archivo TXT), considere que tu nueva implementación deberá estar funcionando.
 
 Haz lo mejor que puedas.
