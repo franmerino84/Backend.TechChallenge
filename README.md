@@ -8,7 +8,7 @@ El es refactorizar el código de este proyecto.
 
 Trate como un refactoring de un código final, que irá a producción y tiene que estar lo mejor posible.
 
-## Qué esperamos encontrar en el Challenge:
+## Qué esperamos encontrar en el Challenge
 
 En el resultado del refactoring nos gustaría encontrar:
 

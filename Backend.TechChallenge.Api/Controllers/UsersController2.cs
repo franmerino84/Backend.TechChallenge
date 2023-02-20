@@ -14,5 +14,15 @@ namespace Backend.TechChallenge.Api.Controllers
             StreamReader reader = new StreamReader(fileStream);
             return reader;
         }
+
+        private void WriteUserToFile(User user)
+        {
+            var path = Directory.GetCurrentDirectory() + "/Files/Users.txt";
+
+            using (StreamWriter outputFile = new StreamWriter(path, append: true))
+            {
+                outputFile.WriteLine(user.Name + "," + user.Email + "," + user.Phone + "," + user.Address + "," + user.UserType + "," + user.Money);
+            }
+        }
     }
 }

@@ -135,17 +135,7 @@ namespace Backend.TechChallenge.Api.Controllers
                     }
                 }
 
-                if (!isDuplicated)
-                {
-                    Debug.WriteLine("User Created");
-
-                    return new Result()
-                    {
-                        IsSuccess = true,
-                        Errors = "User Created"
-                    };
-                }
-                else
+                if (isDuplicated)
                 {
                     Debug.WriteLine("The user is duplicated");
 
@@ -165,6 +155,8 @@ namespace Backend.TechChallenge.Api.Controllers
                     Errors = "The user is duplicated"
                 };
             }
+
+            WriteUserToFile(newUser);
 
             return new Result()
             {
