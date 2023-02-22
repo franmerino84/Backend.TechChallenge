@@ -1,49 +1,48 @@
 # Backend.TechChallenge
 
-Un developer se fue y nos dejó ese proyecto así, con muchos problemas.
+A developer went on vacation and several issues arose in the project that needed to be resolved.
 
-El webAPI funciona, pero tiene muchos fallos de arquitectura, calidad de código, testing y etc.
+The webAPI works, but it has many flaws in architecture, code quality, testing and etc.
 
-El es refactorizar el código de este proyecto.
+We need you to refactor the code of this project.
 
-Trate como un refactoring de un código final, que irá a producción y tiene que estar lo mejor posible.
+Remember to treat it as a refactoring of a final code, which will go to production and has to be as good as possible.
 
-## Qué esperamos encontrar en el Challenge
+## What we expect to find in the Challenge
 
-En el resultado del refactoring nos gustaría encontrar:
+In the result of the refactoring we would like to find:
 
-- Programación orientada a objetos.
+- Object-oriented programming.
 
-- Un modelo de arquitectura. El que tu consideres más aplicable o que tengas más experiencia.
+- An architectural model. The one that you consider most applicable or that you have more experience.
 
-- Los conceptos de Clean Code que tu consideras importantes.
+- The Clean Code concepts that you consider important.
 
-- Los mejores tests unitarios que puedas hacer y con la cobertura de código que consideres importante.
+- The best unit tests you can do and with the code coverage you consider important.
 
-- Un sistema polimórfico o algún patrón de diseño. El que más encaje o que más te guste.
+- A polymorphic system or some design pattern. The one that fits the most or that you like the most.
 
-- Conceptos transversales/crosscutting que consideres importantes a un webAPI en producción como logging, validation, exception handling... 
+- Transversal/crosscutting concepts that you consider important to a webAPI in production such as logging, validation, exception handling...
 
-- Conceptos de REST, principios SOLID y buenas prácticas aplicados.
+- REST concepts, SOLID principles and good practices applied.
 
-- Y quieres tomarte más tiempo en el challenge puedes cambiar el tipo de persistencia (actualmente archivo TXT), pero considere que tu nueva implementación deberá estar funcionando.
+- And you want to take more time in the challenge you can change the type of persistence (currently TXT file), but consider that your new implementation should be working.
 
-Haz lo mejor que puedas.
-
-
-## Cuanto tiempo tienes para el challenge
-
-Es un WebAPI pequeño y normalmente un buen refactoring se puede hacer en cerca de 2 horas.
-
-Pero sabemos que cada uno tiene su velocidad y en general preferimos priorizar la calidad de la entrega, por eso no hay límite de tiempo.
+Do the best you can.
 
 
-## Como debes entregar el challenge una vez terminado
+## How much time do you have for the challenge
 
-Para que hagas el challenge debes crear una rama a partir de esta (main).
+It is a small WebAPI and normally a good refactoring can be done in about 2 hours.
 
-Y una vez hayas terminado el refactoring puedes enviarnos:
+But we know that each one has its speed and in general we prefer to prioritize the quality of delivery, so there is no time limit.
 
-* El link de tu rama en Github
-* El link de una PR de tu rama hacía el repo original
 
+## As you must deliver the challenge once finished
+
+For you to do the challenge you must create a branch or a fork from this one (main).
+
+And once you have finished the refactoring you can send us:
+
+* The link of your branch on Github
+* The link of a PR from your branch to the original repo
