@@ -64,21 +64,20 @@ namespace Backend.TechChallenge.Api.Controllers
         }
 
 
-        //Validate errors
         private IEnumerable<string> ValidateErrors(UsersPostRequestDto userDto)
         {
             var errors = new List<string>();
 
-            if (userDto.Name == null)
+            if (string.IsNullOrWhiteSpace(userDto.Name))
                 errors.Add("The name is required");
 
-            if (userDto.Email == null)
+            if (string.IsNullOrWhiteSpace(userDto.Email))
                 errors.Add("The email is required");
 
-            if (userDto.Address == null)
+            if (string.IsNullOrWhiteSpace(userDto.Address))
                 errors.Add("The address is required");
 
-            if (userDto.Phone == null)
+            if (string.IsNullOrWhiteSpace(userDto.Phone))
                 errors.Add("The phone is required");
 
             return errors;
