@@ -43,7 +43,10 @@ namespace Backend.TechChallenge.Api.Controllers
 
             try
             {
+                //TODO UserService has to be injected by IOC
                 new UsersService().Create(newUser);
+
+                //TODO userDTO for the response has to be updated with the id
             }
             catch (UserDuplicatedException)
             {
