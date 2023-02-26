@@ -1,6 +1,6 @@
 ﻿namespace Backend.TechChallenge.Domain.Services.Users.Creation.Email
 {
-    public interface IEmailNormalizerUserCreationDecorator : IUserCreationDecorator
+    public interface IEmailNormalizerUserCreationModifier : IUserCreationModifier
     {
     }
 }

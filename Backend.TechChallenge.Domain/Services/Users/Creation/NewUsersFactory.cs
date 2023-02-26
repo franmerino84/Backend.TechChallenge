@@ -5,18 +5,18 @@ namespace Backend.TechChallenge.Domain.Services.Users.Creation
     public class NewUsersFactory : INewUsersFactory
     {
         private readonly IUsersFactory _usersFactory;
-        private readonly List<IUserCreationDecoratorFactory> _userDecoratorFactories;
+        private readonly List<IUserCreationModifierFactory> _userCreationModifierFactories;
 
-        public NewUsersFactory(IUsersFactory usersFactory, IEnumerable<IUserCreationDecoratorFactory> userDecoratorFactories)
+        public NewUsersFactory(IUsersFactory usersFactory, IEnumerable<IUserCreationModifierFactory> userCreationModifierFactories)
         {
             _usersFactory = usersFactory;
-            _userDecoratorFactories = userDecoratorFactories.ToList();
+            _userCreationModifierFactories = userCreationModifierFactories.ToList();
         }
 
         public User CreateNewUser(string name, string email, string address, string phone, UserType userType, decimal money)
         {
             var user = _usersFactory.BuildUser(name, email, address, phone, userType, money);
-            _userDecoratorFactories.ForEach(x => x.CreateUserDecorator(userType).ApplyCreationChanges(user));
+            _userCreationModifierFactories.ForEach(x => x.CreateUserModifier(userType).ApplyCreationChanges(user));
             return user;
         }
     }

@@ -2,8 +2,8 @@
 
 namespace Backend.TechChallenge.Domain.Services.Users.Creation
 {
-    public interface IUserCreationDecoratorFactory
+    public interface IUserCreationModifierFactory
     {
-        IUserCreationDecorator CreateUserDecorator(UserType userType);
+        IUserCreationModifier CreateUserModifier(UserType userType);
     }
 }

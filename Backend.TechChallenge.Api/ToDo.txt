@@ -1,16 +1,12 @@
 ﻿PRIORITIZED TASKS
 TODO
-- manage exceptions
-	- mediatr
-- Unit tests
-	- check status code instead of IsSuccess field
+- Unit tests	
 	- add tests
 - release notes
 	- initial considerations
 		- api contract (align with clients)
 		- patterns overkill (align with colleagues)
 	- list of changes
-- add swagger
 	
 
 DONE
@@ -49,5 +45,7 @@ DONE
 - Removal of redundant comments
 - Improve exception handling
 - improve user creation & decoration pattern
+- tests
+	- convert previous tests to integration tests
 
 

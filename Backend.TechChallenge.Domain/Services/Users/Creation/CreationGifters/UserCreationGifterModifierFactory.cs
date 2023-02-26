@@ -2,10 +2,10 @@
 
 namespace Backend.TechChallenge.Domain.Services.Users.Creation.CreationGifters
 {
-    public class UserCreationGifterFactory : IUserCreationDecoratorFactory
+    public class UserCreationGifterModifierFactory : IUserCreationModifierFactory
     {
 
-        public IUserCreationDecorator CreateUserDecorator(UserType userType)
+        public IUserCreationModifier CreateUserModifier(UserType userType)
         {
             return userType switch
             {

@@ -2,7 +2,7 @@
 
 namespace Backend.TechChallenge.Domain.Services.Users.Creation.CreationGifters
 {
-    public class SuperUserCreationGifter : IUserCreationGifter, IUserCreationDecorator
+    public class SuperUserCreationGifter : IUserCreationGifter, IUserCreationModifier
     {
         public void ApplyCreationChanges(User user) =>
             ApplyGift(user);

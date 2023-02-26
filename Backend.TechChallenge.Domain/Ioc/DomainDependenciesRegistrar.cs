@@ -14,9 +14,9 @@ namespace Backend.TechChallenge.Domain.Ioc
             services.AddSingleton<IUsersFactory, UsersFactory>();
             services.AddSingleton<INewUsersFactory, NewUsersFactory>();
             services.AddSingleton<IEmailNormalizer, EmailNormalizer>();
-            services.AddSingleton<IEmailNormalizerUserCreationDecorator, EmailNormalizerUserCreationDecorator>();
-            services.AddSingleton<IUserCreationDecoratorFactory, EmailNormalizerUserCreationDecoratorFactory>();
-            services.AddSingleton<IUserCreationDecoratorFactory, UserCreationGifterFactory>();
+            services.AddSingleton<IEmailNormalizerUserCreationModifier, EmailNormalizerUserCreationModifier>();
+            services.AddSingleton<IUserCreationModifierFactory, EmailNormalizerUserCreationModifierFactory>();
+            services.AddSingleton<IUserCreationModifierFactory, UserCreationGifterModifierFactory>();
             return services;
         }
     }

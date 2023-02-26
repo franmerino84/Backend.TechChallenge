@@ -3,11 +3,11 @@ using Backend.TechChallenge.Domain.Services.Email;
 
 namespace Backend.TechChallenge.Domain.Services.Users.Creation.Email
 {
-    public class EmailNormalizerUserCreationDecorator : IEmailNormalizerUserCreationDecorator
+    public class EmailNormalizerUserCreationModifier : IEmailNormalizerUserCreationModifier
     {
         private readonly IEmailNormalizer _normalizer;
 
-        public EmailNormalizerUserCreationDecorator(IEmailNormalizer normalizer)
+        public EmailNormalizerUserCreationModifier(IEmailNormalizer normalizer)
         {
             _normalizer = normalizer;
         }
