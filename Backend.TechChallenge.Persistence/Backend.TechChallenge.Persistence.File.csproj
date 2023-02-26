@@ -14,10 +14,4 @@
     <ProjectReference Include="..\Backend.TechChallenge.Domain\Backend.TechChallenge.Domain.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <None Update="Files\Users.txt">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-  </ItemGroup>
-
 </Project>
