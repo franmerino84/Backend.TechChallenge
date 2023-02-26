@@ -2,9 +2,13 @@
 
 namespace Backend.TechChallenge.Domain.Services.Users.Creation.CreationGifters
 {
-    public class SuperUserCreationGifter : BaseUserCreationGifter<SuperUser>
+    public class SuperUserCreationGifter : IUserCreationGifter, IUserCreationDecorator
     {
-        public override void ApplyGift(SuperUser user)
+        public void ApplyCreationChanges(User user) =>
+            ApplyGift(user);
+
+
+        public void ApplyGift(User user)
         {
             if (user.Money > 100)
                 user.Money += user.Money * 0.2m;

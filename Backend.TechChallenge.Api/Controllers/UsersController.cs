@@ -1,13 +1,16 @@
 ﻿using AutoMapper;
 using Backend.TechChallenge.Api.Dtos.Common;
 using Backend.TechChallenge.Api.Dtos.Users.Post;
+using Backend.TechChallenge.Application.Users;
 using Backend.TechChallenge.Application.Users.Command.CreateUser;
 using MediatR;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using System.Runtime.Serialization;
 using System.Threading.Tasks;
 
 namespace Backend.TechChallenge.Api.Controllers
@@ -37,7 +40,7 @@ namespace Backend.TechChallenge.Api.Controllers
 
             if (errors.Any())
                 return UnprocessableEntity(new ErrorResponseDto(errors));
-
+            
             var command = _mapper.Map<CreateUserCommand>(userDto);
 
             var response = await _mediator.Send(command);
@@ -90,6 +93,13 @@ namespace Backend.TechChallenge.Api.Controllers
 
             if (string.IsNullOrWhiteSpace(userDto.Phone))
                 errors.Add("The phone is required");
+
+            if (!Enum.TryParse(typeof(UserType), userDto.UserType, out _))
+                errors.Add("The user type has to be one of these values: 'Normal', 'SuperUser', 'Premium'");
+
+            if (!decimal.TryParse(userDto.Money, out _))
+                errors.Add("The money must be a number.");
+
 
             return errors;
         }

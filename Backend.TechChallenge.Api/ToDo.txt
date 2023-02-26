@@ -1,6 +1,4 @@
 ﻿PRIORITIZED TASKS
-- improve user creation & decoration pattern
-
 TODO
 - manage exceptions
 	- mediatr
@@ -50,4 +48,6 @@ DONE
 - Variable renaming
 - Removal of redundant comments
 - Improve exception handling
+- improve user creation & decoration pattern
+
 
