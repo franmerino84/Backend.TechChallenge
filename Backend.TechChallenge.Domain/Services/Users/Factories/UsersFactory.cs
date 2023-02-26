@@ -5,6 +5,10 @@ namespace Backend.TechChallenge.Domain.Services.Users.Factories
 {
     public class UsersFactory : IUsersFactory
     {
+        public User BuildNewUser(string name, string email, string address, string phone, UserType userType, decimal money)
+        {
+            throw new NotImplementedException();
+        }
 
         public User BuildUser(string name, string email, string address, string phone, UserType userType, decimal money)
         {
