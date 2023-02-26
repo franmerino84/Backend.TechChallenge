@@ -2,16 +2,16 @@
 
 namespace Backend.TechChallenge.Domain.Services.Users.Creation.Email
 {
-    public class EmailNormalizerUserCreationModifierFactory : IUserCreationModifierFactory
+    public class EmailNormalizerUserCreationModifierProvider : IUserCreationModifierProvider
     {
         private readonly IEmailNormalizerUserCreationModifier _modifier;
 
-        public EmailNormalizerUserCreationModifierFactory(IEmailNormalizerUserCreationModifier modifier)
+        public EmailNormalizerUserCreationModifierProvider(IEmailNormalizerUserCreationModifier modifier)
         {
             _modifier = modifier;
         }
 
-        public IUserCreationModifier CreateUserModifier(UserType userType) =>
+        public IUserCreationModifier GetUserModifier(UserType userType) =>
             _modifier;
     }
 }

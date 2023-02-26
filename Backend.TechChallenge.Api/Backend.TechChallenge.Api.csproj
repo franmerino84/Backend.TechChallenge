@@ -21,12 +21,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="Files\Users.txt">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-  </ItemGroup>
-
-  <ItemGroup>
     <Folder Include="Middleware\" />
   </ItemGroup>
 

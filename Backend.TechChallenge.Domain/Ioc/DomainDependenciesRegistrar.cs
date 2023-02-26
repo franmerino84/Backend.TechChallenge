@@ -3,6 +3,7 @@ using Backend.TechChallenge.Domain.Services.Users;
 using Backend.TechChallenge.Domain.Services.Users.Creation;
 using Backend.TechChallenge.Domain.Services.Users.Creation.CreationGifters;
 using Backend.TechChallenge.Domain.Services.Users.Creation.Email;
+using Backend.TechChallenge.Domain.Services.Users.Creation.Gifters;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace Backend.TechChallenge.Domain.Ioc
@@ -14,9 +15,12 @@ namespace Backend.TechChallenge.Domain.Ioc
             services.AddSingleton<IUsersFactory, UsersFactory>();
             services.AddSingleton<INewUsersFactory, NewUsersFactory>();
             services.AddSingleton<IEmailNormalizer, EmailNormalizer>();
+            services.AddSingleton<NormalUserCreationGifter>();
+            services.AddSingleton<SuperUserCreationGifter>();
+            services.AddSingleton<PremiumUserCreationGifter>();
             services.AddSingleton<IEmailNormalizerUserCreationModifier, EmailNormalizerUserCreationModifier>();
-            services.AddSingleton<IUserCreationModifierFactory, EmailNormalizerUserCreationModifierFactory>();
-            services.AddSingleton<IUserCreationModifierFactory, UserCreationGifterModifierFactory>();
+            services.AddSingleton<IUserCreationModifierProvider, EmailNormalizerUserCreationModifierProvider>();
+            services.AddSingleton<IUserCreationModifierProvider, UserCreationGifterModifierProvider>();
             return services;
         }
     }

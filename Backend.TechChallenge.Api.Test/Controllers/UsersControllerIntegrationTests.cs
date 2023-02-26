@@ -2,33 +2,25 @@ using AutoMapper;
 using Backend.TechChallenge.Api.Controllers;
 using Backend.TechChallenge.Api.Dtos.Common;
 using Backend.TechChallenge.Api.Dtos.Users.Post;
-using Backend.TechChallenge.Api.Ioc;
+using Backend.TechChallenge.Common.Test;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.DependencyInjection;
 using Xunit;
 
-namespace Backend.TechChallenge.Test
+namespace Backend.TechChallenge.Api.Test.Controllers
 {
-    [CollectionDefinition("Tests", DisableParallelization = true)]    
+    [CollectionDefinition("Tests", DisableParallelization = true)]
     public class UsersControllerIntegrationTests
     {
-        private ServiceProvider _serviceProvider;
-        private IMapper _mapper;
-        private IMediator _mediator;
+        private readonly IMapper _mapper;
+        private readonly IMediator _mediator;
 
         public UsersControllerIntegrationTests()
         {
-            BuildServiceProvider();
-        }
-
-        private void BuildServiceProvider()
-        {
-            ServiceCollection services = new();
-            services.AddDependencies();
-            _serviceProvider = services.BuildServiceProvider();
-            _mapper = _serviceProvider.GetService<IMapper>();
-            _mediator = _serviceProvider.GetService<IMediator>();
+            var serviceProvider = ServiceProviderBuilder.Build();
+            _mapper = serviceProvider.GetService<IMapper>();
+            _mediator = serviceProvider.GetService<IMediator>();
         }
 
         [Fact]

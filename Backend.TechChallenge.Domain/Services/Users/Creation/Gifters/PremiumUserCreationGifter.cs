@@ -1,6 +1,6 @@
 ﻿using Backend.TechChallenge.Domain.Entities.Users;
 
-namespace Backend.TechChallenge.Domain.Services.Users.Creation.CreationGifters
+namespace Backend.TechChallenge.Domain.Services.Users.Creation.Gifters
 {
     public class PremiumUserCreationGifter : IUserCreationGifter, IUserCreationModifier
     {

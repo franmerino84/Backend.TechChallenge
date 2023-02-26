@@ -31,8 +31,9 @@ namespace Backend.TechChallenge.Api.Controllers
         }
 
         [HttpPost]
-        [ProducesResponseType(typeof(UsersPostResponseDto),StatusCodes.Status201Created)]
+        [ProducesResponseType(typeof(UsersPostResponseDto),StatusCodes.Status201Created)]        
         [ProducesResponseType(typeof(ErrorResponseDto), StatusCodes.Status409Conflict)]
+        [ProducesResponseType(typeof(ErrorResponseDto), StatusCodes.Status422UnprocessableEntity)]
         [ProducesResponseType(typeof(ErrorResponseDto), StatusCodes.Status500InternalServerError)]
         public async Task<IActionResult> Post(UsersPostRequestDto userDto)
         {
