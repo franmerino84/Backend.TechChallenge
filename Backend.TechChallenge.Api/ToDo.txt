@@ -1,31 +1,26 @@
-﻿TODO
-- Migrate to net 7
+﻿PRIORITIZED TASKS
+- improve user creation & decoration pattern
 
-- Standardize api call		
-	- revisar el created
-	- response dto?
-- IOC
-- Improve errors validation
-- Refactor User Type management with OOD
-- Apply ddd
-	- Extract persistence layer
-		- repositories
-		- domain objects
-		- data models
-		- dtos
-- Variable renaming
-- Removal of redundant comments
-- Improve exception handling
+TODO
+- manage exceptions
+	- mediatr
 - Unit tests
 	- check status code instead of IsSuccess field
 	- add tests
+- release notes
+	- initial considerations
+		- api contract (align with clients)
+		- patterns overkill (align with colleagues)
+	- list of changes
+- add swagger
+	
 
 DONE
-- Merge composite ifs
+- Merge composite if
 - Compound assignments
 - Simplify string composition
 - Create custom exceptions
-- Extract User class to own file
+- Extract User class to own fileasdasd
 - Unify partial classes
 - Standardize api call
 	- use rest route
@@ -38,4 +33,21 @@ DONE
 	- rename initial test class
 	- rename initial tests
 - User type classes at domain level
-	
+- Migrate to net 6
+- Apply ddd
+	- Extract persistence layer
+		- repositories
+		- domain objects
+		- data models
+		- dtos
+- functional repository
+- make tests work
+- logs on application layer
+	- disabled standard microsoft output
+- IOC
+- Improve errors validation
+- Refactor User Type management with OOD
+- Variable renaming
+- Removal of redundant comments
+- Improve exception handling
+

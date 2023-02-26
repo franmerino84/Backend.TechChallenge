@@ -1,15 +1,12 @@
 ﻿using AutoMapper;
-using Backend.TechChallenge.Api.Domain.Users;
-using Backend.TechChallenge.Api.Dtos.Users;
-using Backend.TechChallenge.Api.Exceptions;
-using Backend.TechChallenge.Api.Services;
+using Backend.TechChallenge.Api.Dtos.Common;
+using Backend.TechChallenge.Api.Dtos.Users.Post;
+using Backend.TechChallenge.Application.Users.Command.CreateUser;
+using MediatR;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
-
-using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -22,51 +19,65 @@ namespace Backend.TechChallenge.Api.Controllers
     {
 
         private readonly IMapper _mapper;
+        private readonly IMediator _mediator;
 
-        public UsersController(IMapper mapper)
+        public UsersController(IMapper mapper, IMediator mediator)
         {
             _mapper = mapper;
+            _mediator = mediator;
         }
 
         [HttpPost]
+        [ProducesResponseType(typeof(UsersPostResponseDto),StatusCodes.Status201Created)]
+        [ProducesResponseType(typeof(ErrorResponseDto), StatusCodes.Status409Conflict)]
+        [ProducesResponseType(typeof(ErrorResponseDto), StatusCodes.Status500InternalServerError)]
         public async Task<IActionResult> Post(UsersPostRequestDto userDto)
         {
             var errors = ValidateErrors(userDto);
 
             if (errors.Any())
-                return UnprocessableEntity(new UsersPostResponseDto()
-                {
-                    Errors = errors
-                });
+                return UnprocessableEntity(new ErrorResponseDto(errors));
 
-            var newUser = _mapper.Map<User>(userDto);
+            var command = _mapper.Map<CreateUserCommand>(userDto);
 
-            try
+            var response = await _mediator.Send(command);
+
+            switch (response.Status)
             {
-                //TODO UserService has to be injected by IOC
-                new UsersService().Create(newUser);
+                case CreateUserCommandResponseResult.Created:
+                    {
+                        var responseDto = _mapper.Map<UsersPostResponseDto>(response);
+                        return Created(string.Empty, responseDto);
+                    }
+                case CreateUserCommandResponseResult.Duplicated:
+                    {
+                        var message = "The user is duplicated";
 
-                //TODO userDTO for the response has to be updated with the id
+                        Debug.WriteLine(message);
+
+                        return Conflict(new ErrorResponseDto(new string[] { message }));
+                    }
+                case CreateUserCommandResponseResult.UnhandledError:
+                default:
+                    {
+                        var message = "An unexpected error occurred";
+
+                        Debug.WriteLine(message);
+
+                        ObjectResult errorObjectResult = new(message)
+                        {
+                            StatusCode = StatusCodes.Status500InternalServerError,
+                            Value = new ErrorResponseDto(new string[] { message })
+                        };
+                        return errorObjectResult;
+                    }
             }
-            catch (UserDuplicatedException)
-            {
-                var message = "The user is duplicated";
-
-                Debug.WriteLine(message);
-
-                return Conflict(new UsersPostResponseDto()
-                {
-                    Errors = new string[] { message }
-                });
-            }
-
-            return Created(string.Empty, userDto);
         }
 
 
-        private IEnumerable<string> ValidateErrors(UsersPostRequestDto userDto)
+        private static IEnumerable<string> ValidateErrors(UsersPostRequestDto userDto)
         {
-            var errors = new List<string>();
+            List<string> errors = new();
 
             if (string.IsNullOrWhiteSpace(userDto.Name))
                 errors.Add("The name is required");
