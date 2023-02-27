@@ -33,15 +33,20 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Backend.TechChallenge.Appli
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{F8FDC3E3-F212-4ABF-9588-43AF030B0E14}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Backend.TechChallenge.Common.Test", "Backend.TechChallenge.Common.Test\Backend.TechChallenge.Common.Test.csproj", "{38B64E63-2C38-42E6-BA50-772BDFE8CAD3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Backend.TechChallenge.Common.Test", "Backend.TechChallenge.Common.Test\Backend.TechChallenge.Common.Test.csproj", "{38B64E63-2C38-42E6-BA50-772BDFE8CAD3}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{38A4F427-C496-46CA-B58C-25DCE8DE868B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Backend.TechChallenge.Domain.Test", "Backend.TechChallenge.Domain.Test\Backend.TechChallenge.Domain.Test.csproj", "{82A3276F-B98A-4738-943B-9A19D2C1C6A9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Backend.TechChallenge.Domain.Test", "Backend.TechChallenge.Domain.Test\Backend.TechChallenge.Domain.Test.csproj", "{82A3276F-B98A-4738-943B-9A19D2C1C6A9}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{8FA01686-1EF4-4FCA-8DDF-FBA9811E2823}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Backend.TechChallenge.Persistence.File.Test", "Backend.TechChallenge.Persistence.File.Test\Backend.TechChallenge.Persistence.File.Test.csproj", "{4315C943-072B-41A9-8E86-E20BCDAF0398}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Backend.TechChallenge.Persistence.File.Test", "Backend.TechChallenge.Persistence.File.Test\Backend.TechChallenge.Persistence.File.Test.csproj", "{4315C943-072B-41A9-8E86-E20BCDAF0398}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{3274AF5A-0403-445F-B82F-B7A4B0313782}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
