@@ -3,9 +3,11 @@ using Backend.TechChallenge.Api.Controllers;
 using Backend.TechChallenge.Api.Dtos.Common;
 using Backend.TechChallenge.Api.Dtos.Users.Post;
 using Backend.TechChallenge.Common.Test;
+using Backend.TechChallenge.Domain.Test.Common;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.DependencyInjection;
+using System;
 using Xunit;
 
 namespace Backend.TechChallenge.Api.Test.Controllers
@@ -27,19 +29,21 @@ namespace Backend.TechChallenge.Api.Test.Controllers
         public void Post_CorrectUser_Success()
         {
             UsersController userController = new(_mapper, _mediator);
-
+            
             var result = userController.Post(new UsersPostRequestDto
             {
-                Name = "Mike",
-                Email = "mike@gmail.com",
-                Address = "Av. Juan G",
-                Phone = "+349 1122354215",
+                Name = DataProvider.GetNewGuidStringWithoutHyphen(),
+                Email = DataProvider.GetRandomEmail(),
+                Address = DataProvider.GetNewGuidStringWithoutHyphen(),
+                Phone = DataProvider.GetRandomPhone(),
                 UserType = "Normal",
                 Money = "124"
             }).Result;
 
             Assert.IsAssignableFrom<CreatedResult>(result);
         }
+
+        
 
         [Fact]
         public void Post_UserWithDuplicatedAddressAndPhone_IdentifiedAsDuplicate()

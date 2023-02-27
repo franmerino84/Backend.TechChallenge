@@ -6,12 +6,12 @@ namespace Backend.TechChallenge.Domain.Services.Users.Creation.Gifters
     {
         public void ApplyCreationChanges(User user) =>
             ApplyGift(user);
-
+        
         public void ApplyGift(User user)
         {
             if (user.Money > 100)
                 user.Money += user.Money * 0.12m;
-            else if (user.Money < 100 && user.Money > 10)
+            else if (user.Money <= 100 && user.Money > 10)
                 user.Money += user.Money * 0.8m;
         }
 
