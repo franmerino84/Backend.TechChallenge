@@ -7,8 +7,8 @@ using Backend.TechChallenge.Persistence.File.Models;
 namespace Backend.TechChallenge.Persistence.File.Repositories
 {
     public class UsersRepository : IUsersRepository
-    {
-        private readonly string _databasePath = Path.Combine(Directory.GetCurrentDirectory(), "Files/Users.txt");
+    {        
+        private readonly string _databasePath = @$"{Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location)}\Files\Users.txt";
         private readonly IMapper _mapper;
         private readonly List<FileUser> _usersToAdd;
 
