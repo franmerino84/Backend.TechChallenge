@@ -50,7 +50,7 @@ I also would like to change the database for a SQL localdb server over EntityFra
 
 - Standardize API
 
-	- Use rest route "POST <controller>"
+	- Use rest route "POST &lt;controller&gt;"
 
 	- Receive a dto in the body insted of a set of parameters in the url
 
