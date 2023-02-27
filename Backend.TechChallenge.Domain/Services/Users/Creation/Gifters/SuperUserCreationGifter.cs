@@ -2,7 +2,7 @@
 
 namespace Backend.TechChallenge.Domain.Services.Users.Creation.Gifters
 {
-    public class SuperUserCreationGifter : IUserCreationGifter, IUserCreationModifier
+    public class SuperUserCreationGifter : IUserCreationGifter
     {
         public void ApplyCreationChanges(User user) =>
             ApplyGift(user);
@@ -13,5 +13,8 @@ namespace Backend.TechChallenge.Domain.Services.Users.Creation.Gifters
             if (user.Money > 100)
                 user.Money += user.Money * 0.2m;
         }
+
+        public UserType GetUserType() => 
+            UserType.SuperUser;
     }
 }

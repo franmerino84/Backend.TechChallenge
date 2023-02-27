@@ -2,8 +2,9 @@
 
 namespace Backend.TechChallenge.Domain.Services.Users.Creation.Gifters
 {
-    public interface IUserCreationGifter
+    public interface IUserCreationGifter : IUserCreationModifier
     {
+        UserType GetUserType();
         void ApplyGift(User user);
     }
 

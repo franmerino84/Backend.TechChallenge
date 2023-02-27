@@ -15,12 +15,13 @@ namespace Backend.TechChallenge.Domain.Ioc
             services.AddSingleton<IUsersFactory, UsersFactory>();
             services.AddSingleton<INewUsersFactory, NewUsersFactory>();
             services.AddSingleton<IEmailNormalizer, EmailNormalizer>();
-            services.AddSingleton<NormalUserCreationGifter>();
-            services.AddSingleton<SuperUserCreationGifter>();
-            services.AddSingleton<PremiumUserCreationGifter>();
+            services.AddSingleton<IUserCreationGifter, NormalUserCreationGifter>();
+            services.AddSingleton<IUserCreationGifter, SuperUserCreationGifter>();
+            services.AddSingleton<IUserCreationGifter, PremiumUserCreationGifter>();
             services.AddSingleton<IEmailNormalizerUserCreationModifier, EmailNormalizerUserCreationModifier>();
             services.AddSingleton<IUserCreationModifierProvider, EmailNormalizerUserCreationModifierProvider>();
             services.AddSingleton<IUserCreationModifierProvider, UserCreationGifterModifierProvider>();
+            
             return services;
         }
     }
