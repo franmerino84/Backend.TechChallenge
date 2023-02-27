@@ -23,6 +23,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Backend.TechChallenge.Common.Test\Backend.TechChallenge.Common.Test.csproj" />
     <ProjectReference Include="..\Backend.TechChallenge.Persistence\Backend.TechChallenge.Persistence.File.csproj" />
   </ItemGroup>
 

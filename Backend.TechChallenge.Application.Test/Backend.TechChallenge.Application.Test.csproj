@@ -24,6 +24,7 @@
   <ItemGroup>
     <ProjectReference Include="..\Backend.TechChallenge.Api\Backend.TechChallenge.Api.csproj" />
     <ProjectReference Include="..\Backend.TechChallenge.Application\Backend.TechChallenge.Application.csproj" />
+    <ProjectReference Include="..\Backend.TechChallenge.Common.Test\Backend.TechChallenge.Common.Test.csproj" />
   </ItemGroup>
 
 </Project>
